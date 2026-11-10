@@ -39,7 +39,7 @@ button.d{background:#c62828}button.d:hover{box-shadow:0 6px 14px #c6282855}
 .ft span{display:inline-block;padding-top:12px;border-top:1px solid #ffffff55;min-width:min(320px,80%)}
 .ft b{font-weight:700}
 @keyframes ftIn{from{opacity:0;transform:translateY(8px)}to{opacity:.92;transform:none}}
-#done{display:none;text-align:center;margin-top:14px}#done h3{margin:0 0 10px}#qb{background:#fff;padding:16px;border-radius:8px;display:inline-block}
+#done{display:none;text-align:center;margin-top:14px}#done h3{margin:0 0 10px}#qb{background:#fff;padding:14px;border:5px solid #F26F25;border-radius:20px;box-shadow:0 0 0 3px #F9A21F55;display:inline-block}
 .row2{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}button.s{background:transparent;color:#D95A12;border:1.5px solid #F26F2566}
 @page{margin:0}
 #qb img,#qb canvas{width:240px;height:240px;image-rendering:pixelated}
@@ -61,25 +61,79 @@ select{padding:10px 12px;border:1.5px solid #f0d4c0;border-radius:10px;font:inhe
 .oval{position:absolute;left:17%;right:17%;top:10%;bottom:16%;border:3px dashed #fff;border-radius:50%;box-shadow:0 0 0 999px #0007;transition:border-color .3s}.oval.ok{border:3px solid #2ecc71}
 #ftx{font-size:1.15em;font-weight:700;margin:14px 0 8px;min-height:2.6em}#fd{display:flex;gap:8px;justify-content:center;margin-bottom:12px}#fd i{width:12px;height:12px;border-radius:50%;background:#ffffff44}#fd i.on{background:#2ecc71}
 .faces{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:8px 0}.faces figure{margin:0;text-align:center;font-size:12px}.faces img{width:84px;height:104px;object-fit:cover;border-radius:10px;display:block;border:1px solid #f0d4c0}
+.hd h2{font-size:clamp(22px,3.8vw,33px);font-weight:800;text-shadow:none;letter-spacing:.02em;position:relative;color:#fff;filter:drop-shadow(0 0 8px #ffffff77) drop-shadow(0 1px 2px #0002);animation:tGlow 3.2s ease-in-out infinite}
+.hd h2 .tc{display:inline-block;color:#fff;background:linear-gradient(90deg,#fff 0,#fff 1em,#ffe45c 2em,#fff 3em,#fff 4.8em) 0 0/4.8em 100% repeat-x;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:tIn .7s cubic-bezier(.2,.9,.25,1.25) both,tWave 3s ease-in-out infinite,tFlow 3.6s linear infinite;animation-delay:calc(var(--i)*.05s),calc(1.7s + var(--i)*.09s),calc(var(--i)*-.16s)}
+.hd h2 .tc.sp{width:.32em}
+.hd h2::after{content:"\2726";position:absolute;right:-1.1em;top:-.35em;font-size:.8em;color:#fff;-webkit-text-fill-color:#fff;animation:tTw 2.2s ease-in-out 1.2s infinite;opacity:0}
+@keyframes tIn{0%{opacity:0;transform:translateY(.7em) scale(.6);filter:blur(5px)}100%{opacity:1;transform:none;filter:blur(0)}}
+@keyframes tWave{0%,100%{transform:translateY(0)}50%{transform:translateY(-.14em)}}
+@keyframes tFlow{to{background-position:4.8em 0}}
+@keyframes tGlow{0%,100%{filter:drop-shadow(0 0 6px #ffffff66) drop-shadow(0 1px 2px #0002)}50%{filter:drop-shadow(0 0 16px #ffe98aee) drop-shadow(0 1px 2px #0002)}}
+@keyframes tTw{0%,100%{opacity:0;transform:scale(.3) rotate(0)}50%{opacity:1;transform:scale(1.15) rotate(35deg)}}
+@media(prefers-reduced-motion:reduce){.hd h2,.hd h2 .tc,.hd h2::after{animation:none!important}.hd h2 .tc{opacity:1}}
+.qbx{background:#fff;border:5px solid #F26F25;border-radius:20px;padding:14px;box-shadow:0 0 0 3px #F9A21F55}#qi div{margin-top:4px}
+@media print{#qb{border:1.3mm solid #F26F25!important;border-radius:4mm!important;box-shadow:none!important}#qi{font-size:clamp(1.6mm,calc(var(--qs,40mm) / 17),3.6mm)!important;line-height:1.5}#qi div{margin:0}}
+.scopt{display:flex;gap:10px;align-items:flex-start;border:1.5px solid #F26F2540;border-radius:12px;padding:10px 12px;margin:8px 0;cursor:pointer;text-align:left}.scopt input{width:auto;margin-top:5px;padding:0}.scopt b{display:block}.scopt small{color:#8a6a55;font-size:13px}
+#mn{display:none;position:absolute;right:0;top:calc(100% + 6px);background:#fff;border-radius:12px;box-shadow:0 8px 24px #0004;min-width:230px;overflow:hidden;z-index:30}
+#mn button{display:block;width:100%;text-align:left;background:#fff!important;color:#2a1a10!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:13px 16px;font-weight:600}#mn button+button{border-top:1px solid #f3e1d3!important}#mn button:hover{background:#fff4ea!important}
+#sm{display:none;position:fixed;inset:0;background:#000b;align-items:center;justify-content:center;padding:12px;z-index:60;overflow:auto}#sm .c{max-width:440px;width:100%;margin:0}
+.hint{color:#8a6a55;font-size:14px}
+#sn{display:inline-flex;align-items:center;gap:10px}.av{width:34px;height:34px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 2px 6px #0003;flex:none}
+.nidrow{display:flex;gap:16px;flex-wrap:wrap}.nt img{width:176px;height:111px;object-fit:cover;border-radius:10px;border:1px solid #f0d4c0;display:block;margin-bottom:6px}
+#ncv{position:fixed;inset:0;background:#0b0603f2;display:none;align-items:center;justify-content:center;z-index:100;padding:12px}#ncv .fb{width:min(96vw,560px);text-align:center;color:#fff}
+.nfw{position:relative;width:100%;aspect-ratio:4/3;border-radius:18px;overflow:hidden;background:#000}.nfw video{width:100%;height:100%;object-fit:cover;display:block}
+.nfr{position:absolute;left:5%;right:5%;top:50%;transform:translateY(-50%);aspect-ratio:1.586;border:3px dashed #fff;border-radius:12px;box-shadow:0 0 0 999px #0007;transition:border-color .25s}.nfr.ok{border:3px solid #2ecc71}.nfr.bad{border:3px solid #ff6b57}
+#ntx{font-size:1.05em;font-weight:700;margin:12px 0;min-height:2.8em}
+.steps .sec{background:#fff8f2;border:1px solid #f6dcc8;border-radius:18px;padding:18px;margin-bottom:16px}
+.sh{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.08em;color:#2a1a10;margin-bottom:6px}
+.sn{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#F26F25,#F9A21F);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:none;transition:background .3s}
+.sec.ok .sn{background:#1f9d5a}.sec.ok .sn span{display:none}.sec.ok .sn::after{content:"\2713";font-size:17px}
+.sbody{display:flex;flex-direction:column;gap:10px;align-items:flex-start;margin-top:6px}.sbody input{width:100%}.sbody .faces{width:100%}
+.steps .nt{width:100%}.steps .nt img{width:min(100%,340px);height:auto;aspect-ratio:1.586;object-fit:cover}
+.pmeth{display:flex;gap:12px;margin:12px 0}.pmeth button{flex:1;padding:16px;font-size:1.1em}
+#pqi,#wqi{width:min(100%,320px);height:auto;border-radius:14px;border:1px solid #f0d4c0;background:#fff;display:block;margin:10px auto}
+.code{font:800 2em ui-monospace,Consolas,monospace;letter-spacing:.25em;background:#fff4ea;border:2px dashed #F26F25;border-radius:12px;padding:8px 16px 8px 24px;display:inline-block;margin:8px 0}
+.pw{text-align:center}.pw .row2{justify-content:center}
+#apv .r{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #f0d9c8;padding:8px 0}#apv .r b{color:#8a6a55;font-weight:600}
 </style></head><body>
 <div class="w"><div class="hd"><div class="lg"></div><h2>SIM Registration</h2></div>
-<div id="sb" style="display:none;color:#fff;font-weight:700;margin-bottom:10px;justify-content:space-between;align-items:center;gap:10px"><span id="sn"></span><button type="button" class="s" id="so" style="color:#fff;border-color:#fffa">Logout</button></div>
+<div id="sb" style="display:none;color:#fff;font-weight:700;margin-bottom:10px;justify-content:space-between;align-items:center;gap:10px"><span id="sn"></span><div style="position:relative"><button type="button" class="s" id="mb" aria-label="Menu" style="color:#fff;border-color:#fffa;font-size:22px;line-height:1;padding:6px 14px">&#8801;</button><div id="mn"><button type="button" id="mpw">Change password</button><button type="button" id="mpd">Payment details</button><button type="button" id="mdv">Change fingerprint scanner</button><button type="button" id="so">Logout</button></div></div></div>
+<div id="sm"><div class="c" id="smb"></div></div>
 <div id="au" class="c"><div class="row2" style="margin:0 0 12px"><button type="button" id="tl">Login</button><button type="button" class="s" id="tr">Request access</button></div>
-<div id="lg"><label>Email</label><input id="le" type="email" autocomplete="username"><label style="margin-top:8px">Password</label><input id="lp" type="password" autocomplete="current-password"><button type="button" id="lb2" style="width:100%;margin-top:12px">Login</button></div>
+<div id="lg"><label>Email</label><input id="le" type="email" autocomplete="username"><label style="margin-top:8px">Password</label><input id="lp" type="password" autocomplete="current-password"><button type="button" id="lb2" style="width:100%;margin-top:12px">Login</button><div style="text-align:center;margin-top:12px"><a href="#" id="sfg" style="color:#D95A12;font-weight:600">Forgot password?</a></div></div>
+<div id="fgp" style="display:none"><div style="font-weight:800;margin-bottom:8px">Reset password</div><div id="rf1"><label>Your email</label><input id="rfe" type="email" autocomplete="username"><button type="button" id="rfsend" style="width:100%;margin-top:12px">Send code</button></div><div id="rf2" style="display:none"><label>Code from the email</label><input id="rfc" inputmode="numeric" autocomplete="one-time-code"><label style="margin-top:8px">New password (at least 8 characters)</label><input id="rfp" type="password" autocomplete="new-password"><button type="button" id="rfok" style="width:100%;margin-top:12px">Change password</button></div><div style="text-align:center;margin-top:12px"><a href="#" id="rfback" style="color:#D95A12;font-weight:600">Back to login</a></div></div>
 <div id="rg" style="display:none"><label>Full name</label><input id="rn" autocomplete="name"><label style="margin-top:8px">Email</label><input id="re" type="email"><label style="margin-top:8px">Designation</label><input id="rd"><label style="margin-top:8px">Password (at least 8 characters)</label><input id="rp" type="password" autocomplete="new-password">
+<label style="margin-top:8px">WhatsApp number (customers send the transaction ID here)</label><input id="rwn" inputmode="tel" placeholder="01XXXXXXXXX">
+<label style="margin-top:8px">bKash QR (amount fixed at 350 Tk)</label><input id="rqb" type="file" accept="image/*">
+<label style="margin-top:8px">Nogod QR (amount fixed at 350 Tk)</label><input id="rqn" type="file" accept="image/*">
+<label style="margin-top:8px">WhatsApp QR</label><input id="rqw" type="file" accept="image/*">
 <label style="margin-top:8px">Face check (camera only)</label><div class="faces" id="sfaces"></div>
 <div class="row2"><button type="button" id="co">Start face check</button></div>
 <button type="button" id="rs" style="width:100%;margin-top:12px">Send request</button></div><div id="am"></div></div>
-<form id="f" class="c" style="display:none"><div class="grid">
-<div><label>Full name</label><input name="name" required autocomplete="name"></div>
-<div><label>NID number</label><input name="nid" required inputmode="numeric"></div>
-<div><label>Date of birth</label><input name="dob" type="date" required></div>
-<div><label>ICCID</label><input name="iccid" required inputmode="numeric"></div>
-<div><label>MSISDN (phone number)</label><input name="msisdn" required inputmode="tel"></div>
-<div><label>Face check (camera only)</label><div class="faces" id="pfaces"></div><button type="button" id="pco">Start face check</button></div>
-</div><button id="b">Submit</button><div id="m"></div></form>
-<div id="done" class="c"><h3>Your QR code</h3><div id="pa"><div id="qb"></div><div id="qi"></div></div><div class="row2"><label style="display:flex;gap:8px;align-items:center;justify-content:center;font-size:15px;color:#2a1a10;margin:0">Print size <select id="ps"><option value="20">20 mm</option><option value="25">25 mm</option><option value="30">30 mm</option><option value="40" selected>40 mm</option><option value="50">50 mm</option><option value="60">60 mm</option><option value="80">80 mm</option></select></label></div><div class="row2"><button type="button" id="pq">Print</button><button type="button" class="s" id="sq">Save image</button></div></div></div>
+<form id="f" class="c steps" style="display:none">
+<div class="sec" data-s="1"><div class="sh"><span class="sn"><span>1</span></span>NID card</div><div class="hint">Scan the front and then the back. Hold the card steady inside the frame.</div>
+<div class="sbody"><div class="nt" id="nf"></div><button type="button" id="nfb">Scan NID front</button><div class="nt" id="nb"></div><button type="button" id="nbb">Scan NID back</button><div id="nst" class="hint"></div></div></div>
+<div class="sec" data-s="2"><div class="sh"><span class="sn"><span>2</span></span>Your details</div>
+<div class="sbody"><label style="margin:0">Full name</label><input name="name" required autocomplete="name"><label style="margin:0">NID number</label><input name="nid" required inputmode="numeric"><div id="dobw" style="display:none;width:100%"><label style="margin:0">Date of birth</label><input name="dob" type="date"></div>
+<input type="hidden" name="name_bn"><input type="hidden" name="father"><input type="hidden" name="mother"><input type="hidden" name="address"></div></div>
+<div class="sec" data-s="3"><div class="sh"><span class="sn"><span>3</span></span>Fingerprint <span id="fsn" class="hint"></span></div>
+<div class="sbody"><div class="faces" id="ffaces"></div><button type="button" id="fsc">Scan fingerprint</button><div id="fdl" class="hint"></div></div></div>
+<div class="sec" data-s="4"><div class="sh"><span class="sn"><span>4</span></span>Face check</div>
+<div class="sbody"><div class="faces" id="pfaces"></div><button type="button" id="pco">Start face check</button></div></div>
+<button id="b">Continue to payment</button><div id="m"></div></form>
+<div id="pay" class="c pw" style="display:none">
+<div id="pm1"><div class="sh" style="justify-content:center;font-size:1.25em">Payment</div><div class="hint">Amount: <b>350 Tk</b>. It is filled in automatically when you scan the QR and it cannot be changed.</div>
+<div class="pmeth"><button type="button" class="s" id="pbk">bKash</button><button type="button" class="s" id="png">Nogod</button></div>
+<div id="pqr" style="display:none"><img id="pqi" alt="Payment QR"><div id="pqt" class="hint"></div><button type="button" id="pdone" style="margin-top:10px">I have paid. Get my SIM QR</button></div>
+<div id="pmg" style="margin-top:10px;font-size:15px"></div><div class="row2"><button type="button" class="s" id="pback">Back</button></div></div>
+<div id="pm2" style="display:none"><div class="sh" style="justify-content:center;font-size:1.25em">Send your transaction ID</div>
+<div class="hint">To get your SIM QR, send your payment <b>transaction ID (in English)</b> or a <b>screenshot</b> of the payment on WhatsApp to the number below. Write this code in your message:</div>
+<div class="code" id="wcode"></div><img id="wqi" alt="WhatsApp QR"><div style="font-weight:800;font-size:1.2em" id="wnum"></div>
+<div id="wst" style="margin-top:12px;color:#8a6a55">Waiting for the staff to confirm your payment...</div><div class="row2"><button type="button" class="s" id="wnew" style="display:none">Start again</button></div></div></div>
+<div id="apv" class="c" style="display:none"><div class="sh" style="font-size:1.25em">Payment request</div><div id="apb"></div><div id="apm" style="margin:10px 0;font-size:15px"></div><div class="row2" id="apa"><button type="button" id="apy">Accept</button><button type="button" class="s" id="apn">Decline</button></div></div>
+<div id="done" class="c"><h3>Your QR code</h3><div id="pa"><div id="qb"></div><div id="qi"></div></div><div class="row2"><label style="display:flex;gap:8px;align-items:center;justify-content:center;font-size:15px;color:#2a1a10;margin:0">Print size <select id="ps"><option value="20">20 mm</option><option value="25">25 mm</option><option value="30">30 mm</option><option value="40" selected>40 mm</option><option value="50">50 mm</option><option value="60">60 mm</option><option value="80">80 mm</option></select></label></div><div class="row2"><button type="button" id="pq">Print</button><button type="button" class="s" id="sq">Save image</button></div><div class="row2"><button type="button" class="s" id="again">New registration</button></div></div></div>
 <div id="fcv"><div class="fb"><div class="fvw"><video id="fv" autoplay playsinline muted></video><div class="oval" id="fov"></div></div><div id="ftx"></div><div id="fd"><i></i><i></i><i></i></div><div class="row2"><button type="button" class="s" id="fx" style="color:#fff;border-color:#fff8">Cancel</button><button type="button" id="fm" style="display:none">Capture</button></div></div></div>
+<div id="ncv"><div class="fb"><div class="nfw"><video id="nv" autoplay playsinline muted></video><div class="nfr" id="nfr"></div></div><div id="ntx"></div><div class="row2"><button type="button" class="s" id="nx" style="color:#fff;border-color:#fff8">Cancel</button><button type="button" id="nm">Capture</button></div></div></div>
 <footer class="ft"><span>&copy; 2026 <b>Galaxy Technology BD Limited</b></span></footer>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
@@ -89,50 +143,108 @@ const SUPABASE_URL="https://cwxisgurozexjqnuwwkt.supabase.co", SUPABASE_ANON_KEY
 const sb=supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
 const $=id=>document.getElementById(id), m=$('m');
 const say=(t,ok)=>{m.style.display='block';m.className=ok?'ok':'er';m.textContent=t};
-const ERR={login:'Please log in again.',notfound:'This ICCID is not in our records.',used:'This SIM is already registered.',invalid:'Please fill in all fields correctly.'};
+const ERR={login:'Please log in again.',notfound:'This ICCID is not in our records.',used:'This SIM is already registered.',invalid:'Please fill in all fields correctly.',nostock:'No SIM is available right now. Please ask the admin to import more SIMs.'};
 function shrink(file){return new Promise((res,rej)=>{const im=new Image();im.onload=()=>{
   const s=Math.min(1,1000/Math.max(im.width,im.height)),c=document.createElement('canvas');
   c.width=im.width*s;c.height=im.height*s;c.getContext('2d').drawImage(im,0,0,c.width,c.height);
   c.toBlob(b=>b?res(b):rej(),'image/jpeg',0.8)};im.onerror=rej;im.src=URL.createObjectURL(file)})}
+const PRICE=350,imgBlob=(f,max)=>new Promise((ok,no)=>{const u=URL.createObjectURL(f),im=new Image();im.onload=()=>{const k=Math.min(1,max/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(im,0,0,c.width,c.height);c.toBlob(b=>b?ok(b):no(),'image/jpeg',.92)};im.onerror=no;im.src=u});
+const myEmail=()=>{try{return localStorage.getItem('simStaffEmail')||''}catch(e){return ''}};
+const pubUrl=p=>p?sb.storage.from('staff-selfies').getPublicUrl(p).data.publicUrl:'';
+const pmg=(t,ok)=>{$('pmg').style.color=ok?'#16794a':'#c62828';$('pmg').textContent=t||''};
+function markSteps(){if($('f').style.display==='none')return;const f=$('f').elements,ok={1:nidImg.front&&nidImg.back,2:f.name.value.trim().length>1&&f.nid.value.replace(/\D/g,'').length>=10,3:!!fFinger,4:!!cFaces};
+  $('f').querySelectorAll('.sec').forEach(e=>e.classList.toggle('ok',!!ok[e.dataset.s]))}
+setInterval(markSteps,600);
+function resetForm(){$('f').reset();cFaces=null;fFinger=null;nidImg={front:null,back:null};payData=null;payMethod='';['pfaces','ffaces','nf','nb'].forEach(i=>$(i).innerHTML='');$('nst').textContent='';$('dobw').style.display='none';say('')}
+/* step 1: check the form, then go to payment */
 $('f').onsubmit=async e=>{
-  e.preventDefault();$('b').disabled=true;
-  const v=Object.fromEntries(new FormData($('f')));
-  const args={p_name:v.name,p_nid:v.nid,p_dob:v.dob,p_iccid:v.iccid,p_msisdn:v.msisdn,p_token:tok};
+  e.preventDefault();const v=Object.fromEntries(new FormData($('f')));
+  const nid=v.nid.replace(/\D/g,''),today=new Date().toISOString().slice(0,10);
+  if((v.name||'').trim().length<2){say('Please enter the full name.');return}
+  if(![10,13,17].includes(nid.length)){say('NID must be 10, 13 or 17 digits.');return}
+  if(!v.dob){$('dobw').style.display='block';say('Please enter the date of birth.');return}
+  if(v.dob>today||v.dob<'1900-01-01'){$('dobw').style.display='block';say('Please enter a valid date of birth.');return}
+  if(!nidImg.front||!nidImg.back){say('Please scan both sides of the NID card first.');return}
+  if(!fFinger){say('Please scan one fingerprint first.');return}
+  if(!cFaces){say('Please complete the face check with the camera first.');return}
+  payData=v;say('');payMethod='';$('pqr').style.display='none';pmg('');['pbk','png'].forEach(i=>$(i).className='s');
+  $('pm1').style.display='block';$('pm2').style.display='none';showView('pay');window.scrollTo({top:0});
+  if(!payInfo||payInfo.r!=='ok'){const {data}=await sb.rpc('my_payment_info',{p_token:tok,p_email:myEmail()});payInfo=data||{r:'err'}}
+  if(payInfo.r==='login')return chk('Please log in again.');
+  if(payInfo.r!=='ok')pmg('Payment is not set up for this account. Please tell the admin.',0)};
+$('pback').onclick=()=>showView('form');
+function pickMethod(m){payMethod=m;$('pbk').className=m==='bkash'?'':'s';$('png').className=m==='nogod'?'':'s';
+  const u=pubUrl(payInfo&&payInfo.r==='ok'?payInfo[m]:'');
+  if(!u){$('pqr').style.display='none';pmg('This payment method is not available. Please choose the other one.',0);return}
+  pmg('');$('pqi').src=u;$('pqt').textContent='Scan this QR with the '+(m==='bkash'?'bKash':'Nogod')+' app and pay '+PRICE+' Tk.';$('pqr').style.display='block'}
+$('pbk').onclick=()=>pickMethod('bkash');$('png').onclick=()=>pickMethod('nogod');
+/* step 2: customer says "I have paid" -> save the request and email the staff */
+$('pdone').onclick=async()=>{
+  const v=payData;if(!v||!payMethod)return;const bt=$('pdone');bt.disabled=true;pmg('Please wait...',1);
   try{
-    const nid=v.nid.replace(/\D/g,''),ms=v.msisdn.replace(/\D/g,''),ic=v.iccid.replace(/\D/g,''),today=new Date().toISOString().slice(0,10);
-    if(![10,13,17].includes(nid.length)){say('NID must be 10, 13 or 17 digits.');return}
-    if(!v.dob||v.dob>today||v.dob<'1900-01-01'){say('Please enter a valid date of birth.');return}
-    if(ic.length<18||ic.length>22){say('ICCID must be 18 to 22 digits (printed on the SIM card).');return}
-    if(ms.length<10||ms.length>13){say('Please enter a valid phone number.');return}
-    if(!cFaces){say('Please complete the face check with the camera first.');return}
-    let r=await sb.rpc('register_sim2',args);                 // 1. dry check
-    if(r.error)throw r.error;
-    if(r.data.r!=='ok'){if(r.data.r==='login')chk('Please log in again.');say(ERR[r.data.r]||'Error.');return}
-    const front=await putFaces('photos','reg/'+uid(),cFaces);
-    r=await sb.rpc('register_sim2',{...args,p_image_path:front});
-    if(r.error)throw r.error;
-    if(r.data.r==='registered'){say('Registration successful!',true);showQR(r.data.link,ic);$('f').reset();cFaces=null;$('pfaces').innerHTML=''}
-    else say(ERR[r.data.r]||'Error.');
-  }catch(x){say(x===undefined?'Could not read this photo. Please use a JPG or PNG.':'Something went wrong. Please try again.')}
-  finally{$('b').disabled=false}
-};
+    const base='reg/'+fileName(v.name),front=await putFaces('photos',base,cFaces);
+    for(const [k,b] of [['finger',fFinger],['nidfront',nidImg.front],['nidback',nidImg.back]]){const u=await sb.storage.from('photos').upload(base+'-'+k+'.jpg',b,{contentType:'image/jpeg'});if(u.error)throw u.error}
+    const r=await sb.rpc('create_payment_request',{p_token:tok,p_email:myEmail(),p_method:payMethod,p_name:v.name.trim(),p_nid:v.nid.replace(/\D/g,''),p_dob:v.dob||'',p_image_path:front,p_nid_front:base+'-nidfront.jpg',p_nid_back:base+'-nidback.jpg',p_address:(v.address||'').trim(),p_father:(v.father||'').trim(),p_mother:(v.mother||'').trim(),p_name_bn:(v.name_bn||'').trim()});
+    if(r.error)throw r.error;const d=r.data||{};
+    if(d.r==='login')return chk('Please log in again.');
+    if(d.r==='nostock')return pmg('No SIM is available right now. Please ask the admin to import more SIMs.',0);
+    if(d.r!=='ok')return pmg('Please check the details and try again.',0);
+    curReq={id:d.id,ps:d.poll_secret,code:d.code,method:payMethod};try{sessionStorage.setItem('simReq',JSON.stringify(curReq))}catch(e){}
+    mailStaff(d,v);showWait();
+  }catch(x){pmg('Something went wrong. Please try again.',0)}finally{bt.disabled=false}};
+function mailStaff(d,v){try{const fd=new FormData(),to=myEmail()||FALLBACK;
+  fd.append('_subject','SIM Registration - Payment request '+d.code);fd.append('_template','box');fd.append('_captcha','false');
+  Object.entries({Message:'A customer says they have paid. Check your '+(payMethod==='bkash'?'bKash':'Nogod')+' account and WhatsApp for the transaction ID that carries the code below. Then open the link to accept or decline.',Customer:v.name,NID:v.nid,Method:payMethod==='bkash'?'bKash':'Nogod',Amount:PRICE+' Tk','Request code':d.code,When:new Date().toString(),'Accept or decline':new URL('index.html',location.href).href+'#approve='+d.id+'.'+d.staff_secret}).forEach(([k,x])=>fd.append(k,x));
+  fetch('https://formsubmit.co/ajax/'+to,{method:'POST',headers:{Accept:'application/json'},body:fd}).catch(()=>{})}catch(e){}}
+/* step 3: waiting for the staff */
+async function showWait(){
+  if(!curReq)return;showView('pay');$('pm1').style.display='none';$('pm2').style.display='block';$('wcode').textContent=curReq.code;
+  $('wst').style.color='#8a6a55';$('wst').textContent='Waiting for the staff to confirm your payment...';$('wnew').style.display='none';
+  if(!payInfo||payInfo.r!=='ok'){const {data}=await sb.rpc('my_payment_info',{p_token:tok,p_email:myEmail()});payInfo=data||{r:'err'}}
+  if(payInfo.r==='ok'){$('wqi').src=pubUrl(payInfo.wa);$('wqi').style.display=payInfo.wa?'block':'none';$('wnum').textContent=payInfo.number||''}
+  clearInterval(pollT);const tick=async()=>{if(!curReq)return;
+    const {data}=await sb.rpc('payment_request_status',{p_id:curReq.id,p_secret:curReq.ps});if(!data||data.r!=='ok')return;
+    if(data.status==='accepted'){clearInterval(pollT);const q=data;curReq=null;try{sessionStorage.removeItem('simReq')}catch(e){}resetForm();showQR(q.link,q.iccid,q.msisdn)}
+    else if(data.status==='rejected'){clearInterval(pollT);$('wst').style.color='#c62828';$('wst').textContent='Your payment could not be confirmed. Please contact the staff.';$('wnew').style.display='inline-block'}};
+  tick();pollT=setInterval(tick,5000)}
+$('wnew').onclick=()=>{curReq=null;try{sessionStorage.removeItem('simReq')}catch(e){}clearInterval(pollT);resetForm();showView('form')};
+$('again').onclick=()=>{resetForm();showView('form')};
+/* ---------- staff approval page (opened from the email link) ---------- */
+(function(){const m=location.hash.match(/^#approve=([0-9a-f-]{36})\.([0-9a-f-]{36})$/i);if(!m)return;approveMode=true;
+  ['au','f','pay','done','sb'].forEach(i=>{const e=$(i);if(e)e.style.display='none'});$('apv').style.display='block';
+  const id=m[1],sec=m[2],apm=(t,ok)=>{$('apm').style.color=ok?'#16794a':'#c62828';$('apm').textContent=t||''};
+  (async()=>{const {data}=await sb.rpc('payment_request_info',{p_id:id,p_secret:sec});
+    if(!data||data.r!=='ok'){$('apb').innerHTML='';$('apa').style.display='none';return apm('This link is not valid.',0)}
+    const R=(a,b)=>'<div class="r"><b>'+a+'</b><span>'+String(b==null?'':b).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))+'</span></div>';
+    $('apb').innerHTML=R('Customer',data.name)+R('NID number',data.nid)+R('Payment',data.method==='bkash'?'bKash':'Nogod')+R('Request code',data.code)+R('Requested',new Date(data.created_at).toLocaleString())+R('Status',data.status)
+      +'<div class="hint" style="margin-top:10px">Check your '+(data.method==='bkash'?'bKash':'Nogod')+' account and WhatsApp for the transaction ID that carries this code before you accept.</div>';
+    if(data.status!=='pending'){$('apa').style.display='none';apm('This request was already '+data.status+'.',1)}})();
+  const decide=async ok=>{$('apy').disabled=$('apn').disabled=true;const {data,error}=await sb.rpc('decide_payment_request',{p_id:id,p_secret:sec,p_accept:ok});
+    if(error||!data||data.r==='bad'){$('apy').disabled=$('apn').disabled=false;return apm('Something went wrong. Please try again.',0)}
+    if(data.r==='nostock'){$('apy').disabled=$('apn').disabled=false;return apm('No SIM is available right now. Please import more SIMs and try again.',0)}
+    $('apa').style.display='none';apm(data.r==='accepted'?'Accepted. The customer will now get the SIM QR.':data.r==='rejected'?'Declined.':'This request was already '+(data.status||'handled')+'.',data.r!=='rejected')};
+  $('apy').onclick=()=>decide(true);$('apn').onclick=()=>decide(false)})();
 $('ps').onchange=()=>document.documentElement.style.setProperty('--qs',$('ps').value+'mm');
-let curI='';
-function showQR(link,ic){curI=ic;$('qb').innerHTML='';
-  if(!link){$('done').style.display='none';say('Registration successful! No QR link is saved for this SIM.',true);return}
-  $('qi').textContent=ic;new QRCode($('qb'),{text:link,width:600,height:600,correctLevel:QRCode.CorrectLevel.M});
-  $('done').style.display='block';$('done').scrollIntoView({behavior:'smooth'})}
+let curI='',curM='';
+function showQR(link,ic,ms){curI=ic;curM=ms;$('qb').innerHTML='';
+  if(!link){showView('form');say('Registration successful! No QR link is saved for this SIM.',true);return}
+  $('qi').innerHTML=qLines(ic,ms);new QRCode($('qb'),{text:link,width:600,height:600,correctLevel:QRCode.CorrectLevel.M});
+  showView('done');try{window.scrollTo({top:0,behavior:'smooth'})}catch(e){}}
 $('pq').onclick=()=>window.print();
 $('sq').onclick=()=>{const c=$('qb').querySelector('canvas');if(!c)return;
-  const pad=60,o=document.createElement('canvas');o.width=o.height=c.width+pad*2;
-  const x=o.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,o.width,o.height);x.drawImage(c,pad,pad);
-  o.toBlob(b=>{const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='qr-'+curI+'.png';a.click()})};
+  composeQR(c,curI,curM).toBlob(b=>{const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='qr-'+curI+'.png';a.click()})};
 
 /* ---------- staff login ---------- */
 let tok=null;const LS='simTok',FALLBACK='engrhabiburweb@gmail.com';
 const amsg=(t,ok)=>{$('am').style.cssText='margin-top:10px;color:'+(ok?'#16794a':'#c62828');$('am').textContent=t||''};
-function show(inn,name){$('au').style.display=inn?'none':'block';$('f').style.display=inn?'block':'none';$('sb').style.display=inn?'flex':'none';if(inn)$('sn').textContent=name;else $('done').style.display='none'}
-function setTab(r){$('lg').style.display=r?'none':'block';$('rg').style.display=r?'block':'none';$('tl').className=r?'s':'';$('tr').className=r?'':'s';amsg('')}
+function setHi(n){const e=$('sn');e.innerHTML='';const av=document.createElement('span');av.className='av';av.setAttribute('aria-hidden','true');av.innerHTML='<svg viewBox="0 0 24 24" width="20" height="20" fill="#F26F25"><circle cx="12" cy="8" r="4.2"/><path d="M3.8 21c.5-4.6 4-7 8.2-7s7.7 2.4 8.2 7z"/></svg>';e.appendChild(av);e.appendChild(document.createTextNode('Hi, '+n))}
+let view='form',approveMode=false,curReq=null,payInfo=null,payMethod='',payData=null,pollT=null;
+try{curReq=JSON.parse(sessionStorage.getItem('simReq')||'null')}catch(e){}
+function showView(v){view=v;const id=v==='form'?'f':v;['f','pay','done'].forEach(x=>$(x).style.display=x===id?'block':'none')}
+function show(inn,name){if(approveMode)return;$('au').style.display=inn?'none':'block';$('sb').style.display=inn?'flex':'none';
+  if(inn){setHi(name);scLabel();if(!getSc())pickScanner(true);if(curReq&&view==='form')showWait();else showView(view)}
+  else{['f','pay','done'].forEach(x=>$(x).style.display='none');smClose()}}
+function setTab(r){$('fgp').style.display='none';$('lg').style.display=r?'none':'block';$('rg').style.display=r?'block':'none';$('tl').className=r?'s':'';$('tr').className=r?'':'s';amsg('')}
 $('tl').onclick=()=>setTab(false);$('tr').onclick=()=>setTab(true);
 async function chk(msg){let t=null;try{t=localStorage.getItem(LS)}catch(e){}
   if(t){const {data}=await sb.rpc('staff_check',{p_token:t});if(data){tok=t;show(true,data);return}}
@@ -140,9 +252,9 @@ async function chk(msg){let t=null;try{t=localStorage.getItem(LS)}catch(e){}
 $('lb2').onclick=async()=>{amsg('');
   const {data,error}=await sb.rpc('staff_login',{p_email:$('le').value.trim(),p_password:$('lp').value});
   if(error)return amsg('Something went wrong. Try again.',0);
-  if(data.r==='ok'){try{localStorage.setItem(LS,data.token)}catch(e){}$('lp').value='';return chk()}
+  if(data.r==='ok'){try{localStorage.setItem(LS,data.token);localStorage.setItem('simStaffEmail',$('le').value.trim().toLowerCase())}catch(e){}$('lp').value='';return chk()}
   if(data.r==='noaccount'){const em=$('le').value.trim();setTab(true);$('re').value=em;return amsg('You do not have access yet. Request access first, then log in after the primary admin accepts.',0)}
-  amsg({wrong:'Wrong email or password.',pending:'Your request is waiting for the primary admin to accept it.',denied:'Your request was denied.'}[data.r]||'Error.',0)};
+  amsg({wrong:'Wrong email or password.',pending:'Your request is waiting for the primary admin to accept it.',denied:'Your request was denied.',removed:'Your access was removed. Please contact the admin.'}[data.r]||'Error.',0)};
 $('so').onclick=async()=>{if(tok)await sb.rpc('staff_logout',{p_token:tok});try{localStorage.removeItem(LS)}catch(e){}tok=null;show(false)};
 setInterval(()=>{if(tok)chk('You were logged out.')},10000);
 /* ---------- guided face check: look straight, then turn right, then turn left ---------- */
@@ -181,9 +293,194 @@ function faceCheck(){return new Promise(async res=>{
     setTimeout(loop,120)};
   loop()})}
 function showFaces(el,f){el.innerHTML=['front','right','left'].map(k=>'<figure><img src="'+URL.createObjectURL(f[k])+'" alt=""><figcaption>'+k[0].toUpperCase()+k.slice(1)+'</figcaption></figure>').join('')}
+/* readable file names in storage: Name-Words_1a2b3c4d-front.jpg (name + short unique id) */
+const fileName=n=>{const w=String(n||'').normalize('NFKD').replace(/[^A-Za-z0-9 ]+/g,' ').trim().split(/\s+/).filter(Boolean).slice(0,4).map(x=>x[0].toUpperCase()+x.slice(1).toLowerCase()).join('-').slice(0,32)||'Person';return w+'_'+uid().replace(/-/g,'').slice(0,8)};
 async function putFaces(bucket,base,f){for(const k of ['front','right','left']){const u=await sb.storage.from(bucket).upload(base+'-'+k+'.jpg',f[k],{contentType:'image/jpeg'});if(u.error)throw u.error}return base+'-front.jpg'}
 $('co').onclick=async()=>{const f=await faceCheck();if(f){sFaces=f;showFaces($('sfaces'),f);amsg('')}};
 $('pco').onclick=async()=>{const f=await faceCheck();if(f){cFaces=f;showFaces($('pfaces'),f);say('')}};
+function composeQR(c,ic,ms){
+  const W=760,q=560,H=70+q+175,o=document.createElement('canvas');o.width=W;o.height=H;const x=o.getContext('2d');
+  x.fillStyle='#fff';x.fillRect(0,0,W,H);
+  const g=x.createLinearGradient(0,0,W,H);g.addColorStop(0,'#F26F25');g.addColorStop(1,'#F9A21F');
+  const rr=(px,py,w,h,r)=>{x.beginPath();x.moveTo(px+r,py);x.arcTo(px+w,py,px+w,py+h,r);x.arcTo(px+w,py+h,px,py+h,r);x.arcTo(px,py+h,px,py,r);x.arcTo(px,py,px+w,py,r);x.closePath()};
+  x.lineWidth=16;x.strokeStyle=g;rr(14,14,W-28,H-28,44);x.stroke();
+  x.lineWidth=3;x.strokeStyle='#F9A21F88';rr(40,40,W-80,H-80,30);x.stroke();
+  x.drawImage(c,(W-q)/2,70,q,q);
+  x.fillStyle='#2a1a10';x.textAlign='center';x.font='600 30px monospace';
+  x.fillText('ICCID : '+ic,W/2,70+q+50);x.fillText('MSISDN : '+ms,W/2,70+q+96);
+  return o}
+const qLines=(ic,ms)=>'<div>ICCID : '+String(ic||'').replace(/\D/g,'')+'</div><div>MSISDN : '+String(ms||'').replace(/\D/g,'')+'</div>';
+
+/* ---------- NID card: camera scan + automatic reading ---------- */
+let nidImg={front:null,back:null};
+function cardBox(v){const vw=v.videoWidth,vh=v.videoHeight,ca=4/3,va=vw/vh,visW=va>ca?vh*ca:vw,visH=va>ca?vh:vw/ca,x0=(vw-visW)/2,y0=(vh-visH)/2,gw=visW*.9,gh=gw/1.586;return{sx:x0+(visW-gw)/2,sy:y0+(visH-gh)/2,sw:gw,sh:gh}}
+function quality(v,b){const W=320,H=Math.round(W*b.sh/b.sw),c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d',{willReadFrequently:true});x.drawImage(v,b.sx,b.sy,b.sw,b.sh,0,0,W,H);
+  const d=x.getImageData(0,0,W,H).data,g=new Float32Array(W*H);let br=0;for(let i=0;i<W*H;i++){g[i]=.299*d[i*4]+.587*d[i*4+1]+.114*d[i*4+2];br+=g[i]}
+  let s=0,s2=0,n=0;for(let y=1;y<H-1;y++)for(let q=1;q<W-1;q++){const i=y*W+q,l=4*g[i]-g[i-1]-g[i+1]-g[i-W]-g[i+W];s+=l;s2+=l*l;n++}
+  return{sharp:s2/n-(s/n)*(s/n),bright:br/(W*H)}}
+function cardShot(side){return new Promise(async res=>{
+  const ov=$('ncv'),v=$('nv'),fr=$('nfr'),tx=$('ntx'),cap=$('nm');let stream=null,timer=null,last={sharp:999,bright:128};
+  const stop=r=>{clearInterval(timer);if(stream)stream.getTracks().forEach(t=>t.stop());v.srcObject=null;ov.style.display='none';res(r)};
+  $('nx').onclick=()=>stop(null);ov.style.display='flex';cap.disabled=true;fr.className='nfr';tx.textContent='Opening the camera...';
+  try{try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'},width:{ideal:1920},height:{ideal:1080}},audio:false})}
+      catch(e){stream=await navigator.mediaDevices.getUserMedia({video:true,audio:false})}
+    v.srcObject=stream;await v.play()}
+  catch(e){tx.textContent='The camera is not available. Allow camera access and try again.';setTimeout(()=>stop(null),2600);return}
+  const label=side==='front'?'front':'back';
+  const tick=()=>{if(!v.videoWidth)return;last=quality(v,cardBox(v));
+    if(last.bright<70){fr.className='nfr bad';tx.textContent='Too dark. Move to a brighter place.'}
+    else if(last.bright>225){fr.className='nfr bad';tx.textContent='Too bright. Avoid glare on the card.'}
+    else if(last.sharp<60){fr.className='nfr bad';tx.textContent='Not clear yet. Hold the card steady and fill the frame.'}
+    else{fr.className='nfr ok';tx.textContent='Clear. Tap Capture.'}
+    cap.disabled=false};
+  tx.textContent='Put the '+label+' of the NID card inside the frame.';timer=setInterval(tick,400);
+  cap.onclick=()=>{tick();
+    if(last.bright<60||last.sharp<30){tx.textContent='The picture is not clear enough. Fix the light, hold the card steady and try again.';return}
+    const b=cardBox(v),k=Math.min(1,1920/b.sw),c=document.createElement('canvas');c.width=Math.round(b.sw*k);c.height=Math.round(b.sh*k);
+    c.getContext('2d').drawImage(v,b.sx,b.sy,b.sw,b.sh,0,0,c.width,c.height);c.toBlob(bl=>stop(bl),'image/jpeg',.92)}})}
+let tessP=null;
+function loadTess(){if(!tessP)tessP=new Promise((ok,no)=>{const s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js';s.onload=()=>ok(window.Tesseract);s.onerror=()=>{tessP=null;no(new Error('load'))};document.head.appendChild(s)});return tessP}
+async function readCard(blob){const T=await loadTess(),w=await T.createWorker(['eng','ben']);try{const {data}=await w.recognize(blob);return data.text||''}finally{await w.terminate()}}
+const MON={jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12};
+const bn2en=t=>t.replace(/[\u09E6-\u09EF]/g,d=>'\u09E6\u09E7\u09E8\u09E9\u09EA\u09EB\u09EC\u09ED\u09EE\u09EF'.indexOf(d));
+const tidy=x=>x.replace(/[|_~=]+/g,' ').replace(/\s+/g,' ').trim();
+function parseFront(raw){const t=bn2en(raw),o={};
+  let m=t.match(/(?:NID|ID)\s*(?:No\.?|Number)?\s*[:.]?\s*((?:\d[ ]?){10,20})/i),n=m?m[1].replace(/\D/g,''):'';
+  if(![10,13,17].includes(n.length)){const a=t.replace(/(\d)[ ](?=\d)/g,'$1');const mm=a.match(/(?<!\d)(\d{17}|\d{13}|\d{10})(?!\d)/);n=mm?mm[1]:''}
+  if(n)o.nid=n;
+  m=t.match(/(\d{1,2})\s+([A-Za-z]{3})[A-Za-z]*\.?,?\s+(\d{4})/);
+  if(m&&MON[m[2].toLowerCase()])o.dob=m[3]+'-'+String(MON[m[2].toLowerCase()]).padStart(2,'0')+'-'+m[1].padStart(2,'0');
+  m=t.match(/Name\s*[:.]?\s*([A-Za-z][A-Za-z.' -]{2,60})/);
+  if(m){const nm=tidy(m[1]).replace(/\s+(Date|Father|Mother|Birth).*$/i,'');if(nm.length>2)o.name=nm.toLowerCase().replace(/(^|[\s.'-])([a-z])/g,(a,b,c)=>b+c.toUpperCase())}
+  m=t.match(/\u09A8\u09BE\u09AE\s*[:.]?\s*([^\n]+)/);if(m&&tidy(m[1]).length>2)o.name_bn=tidy(m[1]);
+  m=t.match(/\u09AA\u09BF\u09A4\u09BE\s*[:.]?\s*([^\n]+)/);if(m&&tidy(m[1]).length>2)o.father=tidy(m[1]);
+  m=t.match(/\u09AE\u09BE\u09A4\u09BE\s*[:.]?\s*([^\n]+)/);if(m&&tidy(m[1]).length>2)o.mother=tidy(m[1]);
+  return o}
+function parseBack(raw){const o={},m=raw.match(/\u09A0\u09BF\u0995\u09BE\u09A8\u09BE\s*[:.]?\s*([\s\S]+?)(?:\u09B0\u0995\u09CD\u09A4\u09C7\u09B0|\u099C\u09A8\u09CD\u09AE\u09B8\u09CD\u09A5\u09BE\u09A8|Blood|Place of Birth|$)/);
+  if(m){const a=tidy(m[1]);if(a.length>6)o.address=a.slice(0,300)}return o}
+function fillForm(o){const f=$('f').elements;for(const k in o){const key={nid:'nid',dob:'dob',name:'name',name_bn:'name_bn',father:'father',mother:'mother',address:'address'}[k];if(key&&f[key]&&o[k])f[key].value=o[k]}}
+async function readCardAI(blob,side){
+  try{
+    const img=await new Promise((ok,no)=>{const u=URL.createObjectURL(blob),im=new Image();im.onload=()=>{const k=Math.min(1,1500/im.width),c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);c.getContext('2d').drawImage(im,0,0,c.width,c.height);c.toBlob(b=>{const r=new FileReader();r.onload=()=>ok(String(r.result).split(',')[1]);r.onerror=no;r.readAsDataURL(b)},'image/jpeg',.85)};im.onerror=no;im.src=u});
+    const ac=new AbortController(),t=setTimeout(()=>ac.abort(),40000);
+    try{const r=await fetch('/.netlify/functions/read-nid',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token:tok,side,image:img}),signal:ac.signal});
+      if(!r.ok)return null;const d=await r.json();return d&&d.ok?d:null}finally{clearTimeout(t)}
+  }catch(e){return null}}
+async function scanNid(side){
+  const b=await cardShot(side);if(!b)return;
+  nidImg[side]=b;$(side==='front'?'nf':'nb').innerHTML='<img src="'+URL.createObjectURL(b)+'" alt="">';
+  const st=$('nst');st.style.color='';st.textContent='Reading the card...';
+  let r=null,issue=null;
+  const ai=await readCardAI(b,side);
+  if(ai){r=ai.fields||{};issue=ai.issue}
+  else{try{st.textContent='Reading the card... the first time can take up to a minute.';const t=await readCard(b);r=side==='front'?parseFront(t):parseBack(t)}catch(e){r=null}}
+  if(!r){st.style.color='#c62828';st.textContent='The card could not be read automatically. Please type the details.';return}
+  fillForm(r);const n=Object.keys(r).length;
+  if(issue){st.style.color='#c62828';st.textContent='This side is not clear ('+issue.replace(/[.\s]+$/,'')+'). Please scan it again.'}
+  else if(n){st.style.color='#16794a';st.textContent='Details were read from the card. Please check every field and correct any mistake.'}
+  else{st.style.color='#c62828';st.textContent='This side could not be read clearly. Scan it again in good light, or type the details.'}}
+$('nfb').onclick=()=>scanNid('front');$('nbb').onclick=()=>scanNid('back');
+let fFinger=null;
+function fingerShot(){return new Promise(async res=>{
+  const ov=$('fcv'),v=$('fv'),oval=$('fov'),tx=$('ftx'),dots=$('fd'),man=$('fm');let stream=null;
+  const stop=r=>{if(stream)stream.getTracks().forEach(t=>t.stop());ov.style.display='none';v.style.transform='';oval.style.display='';dots.style.display='';man.style.display='none';man.onclick=null;res(r)};
+  $('fx').onclick=()=>stop(null);
+  ov.style.display='flex';oval.style.display='none';dots.style.display='none';v.style.transform='none';tx.textContent='Opening the camera...';man.style.display='none';
+  try{try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'},width:{ideal:1280}},audio:false})}
+      catch(e){stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user'},audio:false})}
+    v.srcObject=stream;await v.play()}
+  catch(e){tx.textContent='The camera is not available. Allow camera access and try again.';setTimeout(()=>stop(null),2500);return}
+  tx.textContent='Hold one finger close to the camera, keep it steady, then tap Capture.';man.style.display='inline-block';
+  man.onclick=()=>{const c=document.createElement('canvas'),s=Math.min(1,1000/Math.max(v.videoWidth,v.videoHeight));c.width=v.videoWidth*s;c.height=v.videoHeight*s;c.getContext('2d').drawImage(v,0,0,c.width,c.height);c.toBlob(b=>stop(b),'image/jpeg',.9)}})}
+/* ---- fingerprint scanners (each one talks to the driver service installed on the computer) ---- */
+const toJpeg=(b64)=>new Promise((res,rej)=>{const im=new Image();im.onload=()=>{const c=document.createElement('canvas');c.width=im.width;c.height=im.height;c.getContext('2d').drawImage(im,0,0);c.toBlob(b=>b?res(b):rej(),'image/jpeg',.92)};im.onerror=rej;im.src=b64});
+const tryFetch=async(u,o,ms)=>{const ac=new AbortController(),t=setTimeout(()=>ac.abort(),ms);try{const r=await fetch(u,{...o,signal:ac.signal});return await r.json()}finally{clearTimeout(t)}};
+const NOSOFT='The scanner software is not installed or not running. You need to install the software for this scanner to use it. If it is already installed, start it and try again.';
+const SLOW='The scanner did not respond in time. Check that it is plugged in and try again.';
+const NOFINGER='No finger was detected. Place your finger on the scanner and try again.';
+const NODEV='Scanner not found. Check that it is plugged in and try again.';
+const BADIMG='The scanner returned an image that could not be read. Please try again.';
+const oops=c=>'The scanner reported error '+c+'. Unplug it, plug it in again and try once more.';
+const netErr=e=>e&&e.name==='AbortError'?SLOW:NOSOFT;
+const secugenShot=async()=>{let d;
+  try{d=await tryFetch('https://localhost:8443/SGIFPCapture',{method:'POST',body:new URLSearchParams({Timeout:'10000',Quality:'50',licstr:'',templateFormat:'ISO',imageWSQRate:'0.75'})},15000)}
+  catch(e){return {err:netErr(e)+' For SecuGen, also open https://localhost:8443 once in this browser and accept the security warning.'}}
+  if(d&&d.ErrorCode===0&&d.BMPBase64){try{return {blob:await toJpeg('data:image/bmp;base64,'+d.BMPBase64)}}catch(e){return {err:BADIMG}}}
+  const c=d&&d.ErrorCode;return {err:c===54?NOFINGER:c===55?NODEV:oops(c==null?'unknown':c)}};
+const mantraShot=async()=>{let d;
+  try{d=await tryFetch('https://localhost:8003/mfs100/capture',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({Quality:60,TimeOut:10})},15000)}
+  catch(e){return {err:netErr(e)}}
+  if(d&&String(d.ErrorCode)==='0'&&d.BitmapData){try{return {blob:await toJpeg('data:image/bmp;base64,'+d.BitmapData)}}catch(e){return {err:BADIMG}}}
+  const c=d&&d.ErrorCode;return {err:c==null?oops('unknown'):oops(c)}};
+/* Driver links: replace any link below with your own (for example a Google Drive link) at any time. */
+const PLAY=q=>'https://play.google.com/store/search?q='+encodeURIComponent(q)+'&c=apps';
+const SC=[
+  {id:'secugen',name:'SecuGen',note:'Hamster Pro / Hamster Air',run:secugenShot,laptop:'https://secugen.com/download/',phone:PLAY('SecuGen RD Service')},
+  {id:'mantra',name:'Mantra MFS100',note:'USB optical scanner',run:mantraShot,laptop:'https://mantratec.com/Download/User',phone:PLAY('Mantra RD Service')}
+];
+const dlHtml=sc=>{if(!sc)return '';
+  const L=(u,t)=>u?'<a href="'+u+'" target="_blank" rel="noopener" style="color:#D95A12;font-weight:700">'+t+'</a>':'';
+  const l=[L(sc.laptop,'For laptop'),L(sc.phone,'For phone')].filter(Boolean);
+  return l.length?'Driver software: '+l.join(' &middot; '):'You need to install the software for this scanner to use it.'};
+const sKey=()=>{let e='';try{e=localStorage.getItem('simStaffEmail')||''}catch(x){}return 'simScanner:'+e};
+const getSc=()=>{try{const v=localStorage.getItem(sKey());return SC.find(s=>s.id===v)||null}catch(e){return null}};
+const setSc=id=>{try{localStorage.setItem(sKey(),id)}catch(e){}};
+function scLabel(){const s=getSc();$('fsn').textContent=s?'('+s.name+')':'';$('fsc').textContent='Scan fingerprint';$('fdl').innerHTML=dlHtml(s)}
+const smOpen=h=>{$('smb').innerHTML=h;$('sm').style.display='flex'},smClose=()=>{$('sm').style.display='none';$('smb').innerHTML=''};
+function pickScanner(first){
+  if(first&&$('sm').style.display==='flex')return;
+  const cur=getSc();
+  smOpen('<div style="font-weight:800;font-size:1.1em;margin-bottom:4px">Select your fingerprint scanner</div><div class="hint" style="margin-bottom:8px">Choose the scanner you will use. You can change it later from the menu.</div><div style="max-height:46vh;overflow:auto">'
+    +SC.map(s=>'<label class="scopt"><input type="radio" name="scr" value="'+s.id+'"'+(cur&&cur.id===s.id?' checked':'')+'><span><b>'+s.name+'</b><small>'+s.note+''+'</small></span></label>').join('')
+    +'</div><div id="scd" class="hint" style="margin:10px 0"></div><div class="row2" style="margin-top:0"><button type="button" id="scok">Save</button>'+(first?'':'<button type="button" class="s" id="scno">Cancel</button>')+'</div><div id="scm" style="color:#c62828;font-size:14px;margin-top:8px"></div>');
+  const sel=()=>SC.find(x=>x.id===(($('smb').querySelector('input[name=scr]:checked')||{}).value));
+  const upd=()=>{const x=sel();$('scd').innerHTML=x?'Install the software for this scanner first, then plug it in.<br>'+dlHtml(x):'Select the scanner connected to this computer.'};
+  $('smb').querySelectorAll('input[name=scr]').forEach(i=>i.onchange=upd);upd();
+  $('scok').onclick=()=>{const x=sel();if(!x){$('scm').textContent='Please select a scanner.';return}setSc(x.id);scLabel();smClose()};
+  if($('scno'))$('scno').onclick=smClose}
+$('fsc').onclick=async()=>{const sc=getSc();if(!sc)return pickScanner(true);
+  const bt=$('fsc');bt.disabled=true;
+  say('Place your finger on the scanner...',true);
+  const r=await sc.run();bt.disabled=false;
+  if(!r||r.err||!r.blob){say((r&&r.err)||'Could not read the fingerprint. Please try again.');return}
+  fFinger=r.blob;$('ffaces').innerHTML='<figure><img src="'+URL.createObjectURL(r.blob)+'" alt=""><figcaption>Fingerprint</figcaption></figure>';say('')};
+/* ---- menu: change password / change scanner / logout ---- */
+$('mb').onclick=e=>{e.stopPropagation();$('mn').style.display=$('mn').style.display==='block'?'none':'block'};
+document.addEventListener('click',()=>{$('mn').style.display='none'});
+$('mdv').onclick=()=>{$('mn').style.display='none';pickScanner(false)};
+$('mpw').onclick=()=>{$('mn').style.display='none';changePw()};
+$('mpd').onclick=()=>{$('mn').style.display='none';payDetails()};
+function payDetails(){
+  smOpen('<div style="font-weight:800;font-size:1.1em;margin-bottom:4px">Payment details</div><div class="hint" style="margin-bottom:8px">Leave a file empty to keep the one you already saved.</div><label>WhatsApp number</label><input id="pdn" inputmode="tel"><label style="margin-top:8px">bKash QR (amount fixed at 350 Tk)</label><input id="pdb" type="file" accept="image/*"><label style="margin-top:8px">Nogod QR (amount fixed at 350 Tk)</label><input id="pdg" type="file" accept="image/*"><label style="margin-top:8px">WhatsApp QR</label><input id="pdw" type="file" accept="image/*"><label style="margin-top:8px">Your password</label><input id="pdp" type="password" autocomplete="current-password"><div id="pdm" style="font-size:14px;margin-top:8px"></div><div class="row2"><button type="button" id="pdk">Save</button><button type="button" class="s" id="pdx">Close</button></div>');
+  $('pdx').onclick=smClose;const pm=(t,ok)=>{$('pdm').style.color=ok?'#16794a':'#c62828';$('pdm').textContent=t};
+  (async()=>{const {data}=await sb.rpc('my_payment_info',{p_token:tok,p_email:myEmail()});if(data&&data.r==='ok'&&$('pdn'))$('pdn').value=data.number||''})();
+  $('pdk').onclick=async()=>{const e=myEmail(),pw=$('pdp').value,num=$('pdn').value.trim();
+    if(!e)return pm('Please log out and log in again.',0);if(num.replace(/\D/g,'').length<10)return pm('Enter your WhatsApp number.',0);if(!pw)return pm('Enter your password.',0);
+    $('pdk').disabled=true;
+    try{const id='staff/pay_'+uid().replace(/-/g,''),paths={};
+      for(const [k,i] of [['bkash','pdb'],['nogod','pdg'],['wa','pdw']]){const f=$(i).files[0];if(!f){paths[k]='';continue}const u=await sb.storage.from('staff-selfies').upload(id+'-'+k+'.jpg',await imgBlob(f,1100),{contentType:'image/jpeg'});if(u.error)throw u.error;paths[k]=id+'-'+k+'.jpg'}
+      const {data,error}=await sb.rpc('set_staff_payment',{p_email:e,p_password:pw,p_bkash:paths.bkash,p_nogod:paths.nogod,p_wa:paths.wa,p_wa_number:num});
+      if(error)return pm('Could not save. Please try again.',0);if(data==='wrong')return pm('Your password is wrong.',0);if(data!=='ok')return pm('Could not save. Please try again.',0);
+      payInfo=null;pm('Saved.',1)}
+    catch(x){pm('Something went wrong. Please try again.',0)}finally{$('pdk').disabled=false}}}
+function changePw(){
+  let em='';try{em=localStorage.getItem('simStaffEmail')||''}catch(e){}
+  smOpen('<div style="font-weight:800;font-size:1.1em;margin-bottom:8px">Change password</div>'+(em?'':'<label>Your email</label><input id="pwe" type="email" autocomplete="username">')+'<label>Current password</label><input id="pwo" type="password" autocomplete="current-password"><label style="margin-top:8px">New password (at least 8 characters)</label><input id="pwp" type="password" autocomplete="new-password"><label style="margin-top:8px">Confirm new password</label><input id="pwq" type="password" autocomplete="new-password"><div id="pwm" style="font-size:14px;margin-top:8px"></div><div class="row2"><button type="button" id="pwk">Change password</button><button type="button" class="s" id="pwx">Close</button></div>');
+  $('pwx').onclick=smClose;
+  const pm=(t,ok)=>{$('pwm').style.color=ok?'#16794a':'#c62828';$('pwm').textContent=t};
+  $('pwk').onclick=async()=>{const e=(em||($('pwe')||{}).value||'').trim().toLowerCase(),o=$('pwo').value,p=$('pwp').value,q=$('pwq').value;
+    if(!/^\S+@\S+\.\S+$/.test(e))return pm('Enter your email.',0);
+    if(!o)return pm('Enter your current password.',0);
+    if(p.length<8)return pm('The new password needs at least 8 characters.',0);
+    if(p!==q)return pm('The new passwords do not match.',0);
+    if(p===o)return pm('The new password must be different from the current one.',0);
+    $('pwk').disabled=true;
+    try{const {data,error}=await sb.rpc('staff_change_password',{p_email:e,p_old:o,p_new:p});
+      if(error)return pm('Could not change the password.',0);
+      if(data==='wrong')return pm('Your current password is wrong.',0);
+      if(data!=='ok')return pm('Could not change the password.',0);
+      ['pwo','pwp','pwq'].forEach(i=>{if($(i))$(i).value=''});pm('Password changed.',1)}
+    catch(x){pm('Something went wrong. Please try again.',0)}finally{$('pwk').disabled=false}}}
 function deviceName(){const u=navigator.userAgent;let d='Unknown device';
   if(/Android/.test(u)){const m=/Android [\d.]+;\s*([^;)]+)/.exec(u);d='Android '+(m?m[1].replace(/ Build.*/,'').trim():'phone')}
   else if(/iPhone/.test(u))d='iPhone';else if(/iPad/.test(u))d='iPad';else if(/Windows/.test(u))d='Windows PC';else if(/Mac OS/.test(u))d='Mac';else if(/Linux/.test(u))d='Linux PC';
@@ -193,16 +490,66 @@ $('rs').onclick=async()=>{
   if(n.length<2||!/^\S+@\S+\.\S+$/.test(e)||d.length<2)return amsg('Enter your name, a valid email and your designation.',0);
   if(p.length<8)return amsg('The password must have at least 8 characters.',0);
   if(!sFaces)return amsg('Complete the face check with the camera first.',0);
+  const wn=$('rwn').value.trim(),qb=$('rqb').files[0],qn=$('rqn').files[0],qw=$('rqw').files[0];
+  if(wn.replace(/\D/g,'').length<10)return amsg('Enter your WhatsApp number.',0);
+  if(!qb||!qn||!qw)return amsg('Add the bKash QR, the Nogod QR and the WhatsApp QR.',0);
   $('rs').disabled=true;
   try{
-    const base='staff/'+uid(),front=await putFaces('staff-selfies',base,sFaces);
+    const base='staff/'+fileName(n),front=await putFaces('staff-selfies',base,sFaces);
+    for(const [k,f] of [['bkash',qb],['nogod',qn],['wa',qw]]){const u=await sb.storage.from('staff-selfies').upload(base+'-'+k+'.jpg',await imgBlob(f,1100),{contentType:'image/jpeg'});if(u.error)throw u.error}
     const r=await sb.rpc('staff_signup',{p_name:n,p_email:e,p_designation:d,p_password:p,p_image_path:front});if(r.error)throw r.error;
     if(r.data.r!=='ok')return amsg(r.data.r==='exists'?'This email already has a request or an account. Try logging in.':'Please check your details.',0);
+    const sp=await sb.rpc('save_staff_payment',{p_email:e,p_image_path:front,p_bkash:base+'-bkash.jpg',p_nogod:base+'-nogod.jpg',p_wa:base+'-wa.jpg',p_wa_number:wn});
+    const spOk=!sp.error&&sp.data==='ok';
     const {data:to}=await sb.rpc('get_notify_email'),fd=new FormData(),url=k=>sb.storage.from('staff-selfies').getPublicUrl(base+'-'+k+'.jpg').data.publicUrl;
     fd.append('_subject','SIM Registration - New staff access request');fd.append('_template','box');fd.append('_captcha','false');
     Object.entries({Message:'Someone asked for access to the SIM registration page. Their details and face photos are below. Do you accept? Open the panel to accept or deny.',Name:n,Email:e,Designation:d,Device:deviceName(),When:new Date().toString(),'Face (front)':url('front'),'Face (right)':url('right'),'Face (left)':url('left'),'Open the panel':new URL('admin.html',location.href).href+'#staff'}).forEach(([k,v])=>fd.append(k,v));
     fetch('https://formsubmit.co/ajax/'+(to||FALLBACK),{method:'POST',headers:{Accept:'application/json'},body:fd}).catch(()=>{});
-    amsg('Request sent. You can log in after the primary admin accepts it.',1);sFaces=null;$('sfaces').innerHTML='';['rn','re','rd','rp'].forEach(i=>$(i).value='');
+    amsg(spOk?'Request sent. You can log in after the primary admin accepts it.':'Request sent, but the payment details could not be saved. Please tell the admin.',spOk);['rwn','rqb','rqn','rqw'].forEach(i=>$(i).value='');sFaces=null;$('sfaces').innerHTML='';['rn','re','rd','rp'].forEach(i=>$(i).value='');
   }catch(x){amsg('Could not send the request. Try again.',0)}finally{$('rs').disabled=false}};
+
+/* ---------- staff forgot password: code goes to the staff email ---------- */
+const mailClient=()=>supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY,{auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}});
+let fgMail=null,fgEmail='';
+$('sfg').onclick=e=>{e.preventDefault();$('lg').style.display='none';$('fgp').style.display='block';$('rf1').style.display='block';$('rf2').style.display='none';$('rfe').value=$('le').value;amsg('')};
+$('rfback').onclick=e=>{e.preventDefault();$('fgp').style.display='none';$('lg').style.display='block';amsg('')};
+$('rfsend').onclick=async()=>{const em=$('rfe').value.trim().toLowerCase();
+  if(!/^\S+@\S+\.\S+$/.test(em))return amsg('Your email is incorrect.',0);
+  $('rfsend').disabled=true;
+  try{const ex=await sb.rpc('staff_exists',{p_email:em});if(ex.error)throw ex.error;
+    if(!ex.data)return amsg('Your email is incorrect.',0);
+    fgMail=mailClient();const {error}=await fgMail.auth.signInWithOtp({email:em,options:{shouldCreateUser:true}});
+    if(error)return amsg('Could not send the code. Please try again in a minute.',0);
+    fgEmail=em;$('rf1').style.display='none';$('rf2').style.display='block';amsg('A code was sent to '+em+'.',1)}
+  catch(x){amsg('Something went wrong. Please try again.',0)}finally{$('rfsend').disabled=false}};
+$('rfok').onclick=async()=>{const code=$('rfc').value.trim(),p=$('rfp').value;
+  if(code.length<6)return amsg('Enter the code from the email.',0);
+  if(p.length<8)return amsg('The new password needs at least 8 characters.',0);
+  $('rfok').disabled=true;
+  try{let v=await fgMail.auth.verifyOtp({email:fgEmail,token:code,type:'email'});
+    if(v.error)v=await fgMail.auth.verifyOtp({email:fgEmail,token:code,type:'signup'});
+    if(v.error)return amsg('Wrong or expired code.',0);
+    const r=await fgMail.rpc('staff_reset_password',{p_password:p});fgMail.auth.signOut().catch(()=>{});
+    if(r.error)return amsg('Could not change the password.',0);
+    $('le').value=fgEmail;$('rfc').value='';$('rfp').value='';$('fgp').style.display='none';$('lg').style.display='block';amsg('Password changed. You can log in now.',1)}
+  catch(x){amsg('Something went wrong. Please try again.',0)}finally{$('rfok').disabled=false}};
 setTab(false);chk();
-</script></body></html>
+</script><script>
+/* animated title: split each heading into letters */
+document.querySelectorAll('.hd h2').forEach(h=>{const t=h.textContent;h.setAttribute('aria-label',t);h.innerHTML=[...t].map((c,i)=>c===' '?'<span class="tc sp" aria-hidden="true" style="--i:'+i+'">&nbsp;</span>':'<span class="tc" aria-hidden="true" style="--i:'+i+'">'+c.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</span>').join('')});
+</script>
+<script>
+/* Enter key presses the main button of the open panel */
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Enter'||e.isComposing)return;
+  const t=e.target;if(!t||t.tagName!=='INPUT'||t.type==='radio'||t.type==='checkbox'||t.type==='file')return;
+  const vis=id=>{const b=document.getElementById(id);return b&&b.offsetParent!==null?b:null};
+  let b=null;
+  if(t.closest('#sm'))b=vis('pwk')||vis('scok');
+  else if(t.closest('#lg'))b=vis('lb2');
+  else if(t.closest('#fgp'))b=vis('rfok')||vis('rfsend');
+  else if(t.closest('#rg'))b=vis('rs');
+  if(b&&!b.disabled){e.preventDefault();b.click()}
+});
+</script>
+</body></html>
